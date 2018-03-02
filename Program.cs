@@ -8,6 +8,7 @@ namespace exnet
         {
             Console.WriteLine("Create Connection ...");
             ExWSClient client = new ExWSClient();
+            client.Init();
             
             Console.ReadKey();
         }

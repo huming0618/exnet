@@ -12,11 +12,15 @@ namespace exnet
             
         }
 
-        public async void Init(){
+        public void Init(){
+            this.Connect();
+        }
+
+        private async void Connect(){
             using(ClientWebSocket ws = new ClientWebSocket()){
                 Uri pathUri = new Uri(PATH);
                 await ws.ConnectAsync(pathUri, CancellationToken.None);
-
+                Console.WriteLine("Connected to Server");
 
             }
         }
